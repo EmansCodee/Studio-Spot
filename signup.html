@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #content-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        #gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.6);
+            z-index: 0;
+        }
+
+        #header, #main {
+            position: relative;
+            z-index: 2; 
+        }
+        #header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 60px;
+            font-family: 'Bahnschrift', sans-serif ;
+            font-size: 200px;
+            color: black;
+            text-shadow: 
+                    0 0 10px rgba(255, 255, 255, 0.9),
+                    0 0 20px rgba(255, 255, 255, 0.9),
+                    0 0 30px rgba(255, 255, 255, 0.9),
+                    0 0 40px rgba(255, 255, 255, 0.9),
+                    0 0 50px rgba(255, 255, 255, 0.9);
+        }
+        #center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        #main {
+            padding: 2%;
+            box-sizing: border-box;
+            width: 550px;
+            height: 850px;
+            background-color: rgba(6, 34, 53, 0.9);
+            box-shadow: -1px 1px 15px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 3%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        input {
+            width: 330px;
+            height: 17px;
+            font-size: 15px;
+            padding: 10px;
+            border-width: 2px;
+            margin-bottom: 7px;
+            margin-top: 7px;
+            font-family: 'Bahnschrift', sans-serif ;
+        }
+        button {
+            width: 170px;
+            height: 35px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            justify-content: center;
+            opacity: 100%;
+            border-color: white;
+            margin-top: 10px;
+            font-family: 'Bahnschrift', sans-serif ;
+        }
+        span {
+            margin: 10px;
+            display: block;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: white;
+            font-family: 'Bahnschrift', sans-serif ;
+        }
+        h1 {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            color: white;
+            font-size: 50px;
+            font-family: 'Bahnschrift', sans-serif ;
+        }
+        p {
+            font-size: large;
+            margin-top: 50px;
+            color: white;
+            font-family: 'Bahnschrift', sans-serif ;
+        }
+        #sign-up {
+            margin: 5px;
+            margin-bottom: 50px;
+            font-family: 'Bahnschrift', sans-serif ;
+        }
+
+        .blur-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="content-container">
+        <div id="gradient-overlay"></div> <!-- Gradient overlay -->
+        <div id="center">
+            <div id="main">
+                <h1>SIGN UP</h1>
+                <span>USERNAME:</span>
+                <input type="text" id="username" placeholder=""/>
+                <br>
+                <span>PASSWORD:</span>
+                <input type="password" id="password" placeholder=""/>
+                <br>
+                <button>ENTER</button>
+                <p>Already Have An Account Yet ? </p>
+                <button id="sign-up" onclick="window.location.href='login.html'">SIGN IN!</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

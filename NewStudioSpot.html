@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+         div{
+            /*border: 1px solid black;*/
+        }
+        body{
+            /*background-color:  rgb(235, 247, 255);*/
+            background-color: rgb(252, 254, 255);
+        }
+        #header{
+            border-bottom: 3px solid black;
+            padding:7px;
+            height:40px;
+            display: flex;
+            align-items: center;
+            display:flex;
+            background-color: rgb(4, 48, 78, 0.6);
+        }
+        #header button{
+            height:42px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: box-shadow 0.1s ease-in-out;
+    }
+    #header button:hover{
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 12px 40px rgba(0, 0, 0, 0.38);
+    }
+    .black{
+        justify-content:flex-end;
+        background-color: rgb(4, 48, 78);
+        color:white;
+        font-family:'Bahnschrift', sans-serif ;
+        font-weight: bold;
+        font-size: 20px;
+        border-color: black;
+        margin:10px;
+        width:190px;
+        border-radius: 5px;
+    }
+    .white{
+        width:150px;
+        justify-content: flex-start;
+        background-color: rgb(4, 48, 78, 0);
+        color:white;
+        font-family:'Bahnschrift', sans-serif ;
+        font-weight: bold;
+        font-size: 20px;
+        border:none;
+    }
+    #cover{
+        height:40vh;
+        background-image: url('wave.png');
+        background-size: 100% 70%;;
+        background-position:center;
+        background-repeat:no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 3px solid black;
+        margin-top:3px;
+        background-color: rgb(4, 48, 78, 0.6);
+        box-shadow: 2px 0px 10px #d3d2d2;
+        
+    }
+    #heading{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Bauhaus 93", cursive;
+        font-weight:lighter;
+        font-size: 150px;
+        color:rgb(4, 40, 63);
+        /*color:rgb(4, 4, 119);*/
+        /*text-shadow: 0 0 30px rgba(255, 255, 255, 3.0)*/
+        text-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.9),
+                0 0 20px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    /*#footer{
+        height:30px;
+        background-color: black;
+        color:white;
+        opacity: 80%;
+    }*/
+    #footer {
+        margin-top: 40px;
+        font-family:'Bahnschrift', sans-serif ;
+        border-top: 3px solid black;
+        padding: 20px;
+        background-color: rgb(4, 48, 78);
+        /*background-color: #000000; /* Black background */
+        color: #ffffff; /* White text */
+        text-align: center;
+        font-size: 16px; /* Larger text */
+    }
+    #footer .footer-section {
+        margin-bottom: 20px;
+    }
+    #footer .footer-section h3 {
+        margin-bottom: 10px;
+        font-size: 18px; /* Slightly larger headings */
+    }
+    #footer .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    #footer .footer-section ul li {
+        margin-bottom: 5px;
+    }
+    #footer .footer-section ul li a {
+        color: #5792ff; /* White text for links */
+        text-decoration: none;
+        font-style:italic;
+    }
+    #footer .footer-section ul li a:hover {
+        text-decoration: underline; /* Underline on hover */
+    }
+    #footer .social-media {
+        margin-top: 10px;
+    }
+    #footer .social-media a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff; /* White text for links */
+    }
+    #tagline{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:12px;
+        font-family:'Monotype Corsiva', sans-serif ;
+        /*font-family:'Freestyle Script', sans-serif ;*/
+        font-size:70px;
+        color:black;
+        /*text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 30px rgb(255, 255, 255, 0.8),
+        0 0 50px rgba(255, 255, 255, 0.8);*/
+    }
+    #booking-div{
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 60px;
+        
+    }
+    #booking{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height:50px;
+        width:350px;
+        cursor:pointer;
+        background-color:rgb(4, 48, 78);
+        color:white;
+        margin-right: 10px;
+        font-family:'Bahnschrift', sans-serif ;
+        font-size: 28px;
+        font-weight: bold;
+        border-radius: 7px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+        transition: box-shadow 0.1s ease-in-out;
+    }
+    #booking:hover{
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 12px 40px rgba(0, 0, 0, 0.38);
+    }
+    #tab{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 70px;
+        background-color: rgb(4, 48, 78, 0.1);
+    }
+    .tabdiv{
+        margin-left:50px;
+        margin-right: 80px;
+        margin-bottom:0;
+        width: 470px;
+        height: 150px;
+        background-color: transparent;
+        color:rgb(0, 0, 0);
+        font-family: 'Monotype Corsiva', sans-serif ;
+        font-size: 33px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /*text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.9),
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 10px rgba(255, 255, 255, 0.8);*/
+    }
+    .tabdiv p{
+        font-size: 25px;
+        display:flex;
+        font-weight: lighter;
+        margin-top: 5px;
+        margin-bottom: 0;
+        
+    }
+    /*#room{
+        background-image: url('file:///C:/Users/user/Downloads/pexels-pawel-l-435199-1379716.jpg');
+        background-size: 100% 100%;
+        background-position: center;
+    }
+    #equipment{
+        background-image: url('file:///C:/Users/user/Downloads/pexels-pixabay-164755.jpg');
+        background-size: 100% 100%;
+        background-position: center;
+    }
+    #masterpiece{
+        background-image: url('file:///C:/Users/user/Downloads/pexels-david-bartus-43782-690779.jpg');
+        background-size: 100% 100%;
+        background-position: center;
+    }*/
+
+    .blur-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(199, 196, 196, 0.5);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container {
+        background: transparent;
+        border-radius: 5px;
+        position: relative;
+        width: 550px;
+        height: 850px;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 50px;
+        color:white;
+        font-weight: bold;
+    }
+    /*body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }*/
+
+    .form-container {
+        height: 800px;
+        font-family: 'Bahnschrift', sans-serif ;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    h2 {
+
+        margin-top: 80px;
+        margin-bottom: 30px;
+        font-size: 33px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    input, select {
+        width:410px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #333232;
+        border-radius: 4px;
+    }
+
+    input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        border-color: black;
+        cursor: pointer;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .next-btn, .prev-btn, .submit-btn {
+        background-color: rgb(4, 48, 78);
+        color: white;
+        height: 42px;
+        width:170px;
+        border-radius: 5px;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .form-container button:hover {
+        opacity: 0.8;
+    }
+
+    .form-section {
+        display: none;
+    }
+
+    /*.form-section h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }*/
+    #button-field{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .form-section.active {
+        display: block;
+    }
+
+    .form-container button {
+        margin-top: 20px;
+    }
+
+    button + button {
+        margin-left: 10px;
+    }
+    .form-section{
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        height:750px;
+        width:550px;
+        padding-left:60px;
+        border-color: black;
+        border-width: 4px;
+    }
+    /*.form-section input,label{
+        margin-left: 30px;
+    }*/
+    .form-container {
+        position:relative;
+    display: none; /* Initially hide the form container */
+    }
+
+    .show-form {
+        display: flex 
+    }
+
+    #close-button-ok {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top:0;
+        right:0;
+        cursor: pointer;
+        font-size: 35px;
+        font-weight: bold;
+        color:rgb(18, 18, 19);
+        margin-right:20px;
+        margin-top: 7px;
+    }
+    .tabtwo{
+ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .tabtwodiv{
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height:400px;
+        width:100%;
+    }
+    .image img{
+        width:100%;
+        height:100%;
+    }
+    .image{
+        width:30%;
+        height:100%;
+        box-sizing: border-box;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width:50%;
+        text-align: center;
+        font-size: 38px;
+        font-weight:bold;
+        font-family:'Arial Narrow', sans-serif ;
+    }
+    #left-text-one{
+        padding-left:220px;
+    }
+    #left-text-two{
+        padding-left:220px;
+    }
+    #right-text{
+        padding-right: 220px;
+    }
+    .text p{
+        font-size: 26px;
+        font-weight:lighter;
+        margin-top: 5px;
+    }
+    .left{
+        width:10%;
+    }
+    .right{
+        width:10%
+    }
+</style>
+</head>
+<body>
+    <div id=header>
+        <button class="white">HOME</button>
+        <button class="white">ABOUT</button>
+        <button class="white">CONTACT</button>
+        <button class="black" style="margin-left: auto;" onclick="showLogin('login')">SIGN IN</button>
+        <button class="black" onclick="showLogin('signup')">SIGN UP</button>
+    </div>
+    <div id="cover">
+        <div id="heading">Studio Spot</div>
+    </div>
+    <div  id="tagline">
+        " Find your perfect studio"
+    </div>
+    <div  id="booking-div">
+        <button id="booking">BOOK  NOW</button>
+    </div>
+    <div class="form-container">
+        <span id="close-button-ok" onclick="closeForm()">x</span>
+        <form id="bookingForm">
+            <!-- Personal Information -->
+            <fieldset class="form-section">
+                <h2>PERSONAL INF0RMATION</h2>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]+" title="Please enter only numbers" required>
+                <label for="postalCode">Postal Code:</label>
+                <input type="number" id="postalCode" name="postalCode" required>
+                <button type="button" class="next-btn">NEXT</button>
+            </fieldset>
+
+        <!-- Studio Information -->
+        <fieldset class="form-section">
+            <h2>STUDIO INFORMATION</h2>
+            <label for="city">City:</label>
+            <select id="city" name="city" required>
+                <option value="">Select City</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Quetta">Quetta</option>
+            </select>
+            <label for="area">Area (Optional):</label>
+            <input type="text" id="area" name="area" >
+
+            <label for="roomSize">Room Size:</label>
+            <select id="roomSize" name="roomSize" required>
+                <option value="">Select Room Size</option>
+                <option value="Small">Small Studio: 100 to 300 square feet</option>
+                <option value="Medium">Medium Studio: 400 to 800 square feet</option>
+                <option value="Large">Large Large Studio: 800+ square feet</option>
+            </select>
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType" required>
+                <option value="">Select Room Type</option>
+                <option value="Soundproof">Soundproof</option>
+                <option value="Not Soundproof">Not Soundproof</option>
+            </select>
+                <button type="button" class="prev-btn">PREVIOUS</button>
+                <button type="button" class="next-btn">NEXT</button>
+
+        </fieldset>
+
+        <!-- EQUIPMENT INFORMATION -->
+        <fieldset class="form-section">
+            <h2>Equipment Information</h2>
+            <label><input type="checkbox" name="equipment" value="Computer"> Computer</label>
+            <label><input type="checkbox" name="equipment" value="Microphone"> Microphone</label>
+            <label><input type="checkbox" name="equipment" value="Headphone"> Headphone</label>
+            <label><input type="checkbox" name="equipment" value="Speaker"> Speaker</label>
+            <label><input type="checkbox" name="equipment" value="Green screen"> Green Screen</label>
+            <label><input type="checkbox" name="equipment" value="Ring light"> Ring Light</label>
+            <label><input type="checkbox" name="equipment" value="Camera"> Camera</label>
+            <label><input type="checkbox" name="equipment" value="Drone"> Drone</label>
+            <label><input type="checkbox" name="equipment" value="Power generator"> Power Generator</label>
+            <label><input type="checkbox" name="equipment" value="Tripod"> Tripod</label>
+            <button type="button" class="prev-btn">PREVIOUS</button>
+            <button type="button" class="next-btn">NEXT</button>
+        </fieldset>
+
+        <!-- PAYMENT INFORMATION -->
+        <fieldset class="form-section">
+            <h2>Payment Information</h2>
+            <label for="bankName">Bank Name:</label>
+            <input type="text" id="bankName" name="bankName" required>
+            <label for="accountNumber">Account Number:</label>
+            <input type="number" id="accountNumber" name="accountNumber" required>
+            <label for="accountType">Account Type:</label>
+            <input type="text" id="accountType" name="accountType" required>
+            <label for="routingNumber">Bank Routing Number:</label>
+            <input type="number" id="routingNumber" name="routingNumber" required>
+            <label for="iban">IBAN:</label>
+            <input type="number" id="iban" name="iban" required>
+
+            <button type="button" class="prev-btn">PREVIOUS</button>
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </fieldset>
+        </form>
+    </div>
+
+    <div  id="body">
+        <div id="tab">
+        <div class="tabdiv" id="room">
+            " Choose Your Space "
+            <br>
+            <p>Select the ideal studio environment <br>that suits your project and creative vision.</p>
+        </div>
+        <div class="tabdiv" id="equipment">
+            " Pick Your Equipment "
+            <br>
+            <p> Choose from a range of high quality <br>equipment to bring your ideas to life.</p>
+        </div>
+        <div class="tabdiv" id="masterpiece">
+            " Shape Your Dreams "
+            <br>
+            <p>Craft exceptional work in an inspiring <br> and professional studio setting.</p>
+        </div>
+    </div>
+    <div id="tabtwo">
+        <div class="tabtwodiv" >
+            <div class="left">
+
+            </div>
+            <div class="text" id="left-text-one">
+                “3000 Studios Nationwide”:
+                <br>
+                 <p> Our network of 3000 studios spans across the entire country,
+                    <br> ensuring convenient access for all your creative needs.</p>
+            </div>
+            <div class="image">
+                <img src="studio.jpg">
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+        <div class="tabtwodiv" >
+            <div class="left">
+
+            </div>
+            <div class="image">
+                <img src="contract.jpg">
+            </div>
+            <div class="text" id="right-text">
+                “5500 Successful Bookings and Counting”:
+                <br>
+                <p> With over 5500 successful bookings, our track record speaks for itself.
+                    <br> Join the ranks of satisfied clients who trust us with their projects.</p>
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+        <div class="tabtwodiv" >
+            <div class="left">
+
+            </div>
+            <div class="text" id="left-text-two">
+                “Customization Excellence”: 
+                <br>
+                <p>We’re renowned for our exceptional customization services.
+                    <br> From personalized photoshoots to tailor-made events, excellence delivered.</p>
+            </div>
+            <div class="image">
+                <img src="customization.jpg">
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </div>
+        <div id="footer">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Main Street, Anytown, USA</p>
+                <p>Email: info@studiospot.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <p>&copy; 2024 Studio Spot. All rights reserved.</p>
+        </div>
+        <div class="blur-overlay" id="blurOverlay">
+            <div class="login-container">
+                <span class="close-button" onclick="closeLogin()">×</span>
+                <iframe id="formFrame" src="" frameborder="0" style="width: 550px; height: 850px; border-radius: 25px;"></iframe>
+            </div>
+        </div>
+
+
+            <script>
+                function showLogin(type) {
+                    document.getElementById('blurOverlay').style.display = 'flex';
+                    if (type === 'login') {
+                        document.getElementById('formFrame').src = 'login.html'; // Change iframe source to login form
+                    } else if (type === 'signup') {
+                        document.getElementById('formFrame').src = 'signup.html'; // Change iframe source to sign-up form
+                    }
+                }
+
+                function closeLogin() {
+                    document.getElementById('blurOverlay').style.display = 'none';
+                }
+
+
+
+                document.addEventListener("DOMContentLoaded", () => {
+                const sections = document.querySelectorAll(".form-section");
+                let currentSectionIndex = 0;
+
+                const showSection = (index) => {
+                    sections.forEach((section, i) => {
+                        section.classList.toggle("active", i === index);
+                    });
+                };
+
+                const validateSection = (section) => {
+                    const inputs = section.querySelectorAll("input[required], select[required]");
+                    for (const input of inputs) {
+                        if (!input.value.trim()) {
+                            return false;
+                        }
+                    }
+                    return true;
+                };
+
+                document.querySelectorAll(".next-btn").forEach((button, index) => {
+                    button.addEventListener("click", () => {
+                        const currentSection = sections[currentSectionIndex];
+                        if (validateSection(currentSection)) {
+                            if (currentSectionIndex < sections.length - 1) {
+                                currentSectionIndex++;
+                                showSection(currentSectionIndex);
+                            }
+                        } else {
+                            alert("Please fill out all required fields.");
+                        }
+                    });
+                });
+
+                document.querySelectorAll(".prev-btn").forEach((button, index) => {
+                    button.addEventListener("click", () => {
+                        if (currentSectionIndex > 0) {
+                            currentSectionIndex--;
+                            showSection(currentSectionIndex);
+                        }
+                    });
+                });
+
+                showSection(currentSectionIndex);
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const bookingButton = document.getElementById("booking");
+                const formContainer = document.querySelector(".form-container");
+
+                bookingButton.addEventListener("click", () => {
+                    formContainer.classList.add("show-form"); // Add a class to show the form container
+                });
+            });
+
+            function closeForm() {
+                const formContainer = document.querySelector('.form-container');
+                formContainer.classList.remove('show-form');
+            }
+
+        </script>
+    </body>
+</html>
